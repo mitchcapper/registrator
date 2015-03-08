@@ -21,6 +21,7 @@ var refreshTtl = flag.Int("ttl", 0, "TTL for services (default is no expiry)")
 var forceTags = flag.String("tags", "", "Append tags for all registered services")
 var resyncInterval = flag.Int("resync", 0, "Frequency with which services are resynchronized")
 var deregister = flag.String("deregister", "always", "Deregister exited services \"always\" or \"on-success\"")
+var ignoreDefault = flag.Bool("ignore-default", false, "Ignore containers without SERVICE_ vars by default")
 
 func getopt(name, def string) string {
 	if env := os.Getenv(name); env != "" {
